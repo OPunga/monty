@@ -59,17 +59,12 @@ typedef struct glob_s
 
 extern glob_t glob;
 
-/* monty.c */
 void stack_init(stack_t **head);
 void free_all(void);
+int processor(char *filename, stack_t **stack);
 
-/* helper1.c */
-int process_file(char *filename, stack_t **stack);
+void eval_op(stack_t **stack, char *op, unsigned int line_number);
 
-/* helper2.c */
-void delegate_op(stack_t **stack, char *op, unsigned int line_number);
-
-/* pushPall.c */
 void p_ush(stack_t **stack, unsigned int line_number);
 void p_all(stack_t **stack, unsigned int line_number);
 void p_int(stack_t **stack, unsigned int line_number);
@@ -77,11 +72,11 @@ void p_op(stack_t **stack, unsigned int line_number);
 void s_wap(stack_t **stack, unsigned int line_number);
 
 
-void instruction_add(stack_t **stack, unsigned int line_number);
-void instruction_nop(stack_t **stack, unsigned int line_number);
-void instruction_sub(stack_t **stack, unsigned int line_number);
-void instruction_div(stack_t **stack, unsigned int line_number);
-void instruction_mul(stack_t **stack, unsigned int line_number);
+void a_dd(stack_t **stack, unsigned int line_number);
+void n_op(stack_t **stack, unsigned int line_number);
+void s_ub(stack_t **stack, unsigned int line_number);
+void d_iv(stack_t **stack, unsigned int line_number);
+void m_ul(stack_t **stack, unsigned int line_number);
 
 /* instruction3.c */
 void instruction_mod(stack_t **stack, unsigned int line_number);
